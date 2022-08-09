@@ -1,0 +1,30 @@
+body {
+    font-family: 'Heebo', sans-serif;
+    background-color:rgba(150, 170, 182, 0.534)
+}
+
+h1 {
+    text-align: center;
+}
+button{
+    color: black;
+    background-color: white;
+    border-radius: 0.5rem;
+    height: 40px;
+    width: 150px;
+    font-size: 15px;
+    transition: all,1s;
+
+}
+
+button:hover {
+    background-color: aqua;
+}
+
+.button_container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
