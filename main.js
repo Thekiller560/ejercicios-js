@@ -1,7 +1,7 @@
 
 function CallMenu(){
     let nro_ejercicio = parseInt(
-        prompt("Ingrese el numero de ejercicio que desea ejecutar: \r\n 1.suma \r\n 2.Promedio de Examenes \r\n 3.Calcular el area del rectangulo \r\n 4.Calcular el area del triangulo \r\n 5.Calcular el area del circulo \r\n 6.Calcular salario semanal \r\n 7.convertir pulgadas \r\n 8.Cambiar a dolares \r\n 9.Calcular Edad \r\n 10.Calcular persona de menor edad")
+        prompt("Ingrese el numero de ejercicio que desea ejecutar: \r\n 1.suma \r\n 2.Promedio de Examenes \r\n 3.Calcular el area del rectangulo \r\n 4.Calcular el area del triangulo \r\n 5.Calcular el area del circulo \r\n 6.Calcular salario semanal \r\n 7.convertir pulgadas \r\n 8.Cambiar a dolares \r\n 9.Calcular Edad \r\n 10.Calcular persona de menor edad \r\n 11.Calcular Bono \r\n 12.Calcular Incremento de Salario Anual")
     )
 
     if (isNaN(nro_ejercicio)) {
@@ -70,6 +70,17 @@ function MenuEjercicio(nro_ejercicio){
             let edadNombre3 = parseInt(prompt("Ingrese edad 3"));
             alert(ej10_personaMenor(nombre1,nombre2,nombre3,edadNombre1,edadNombre2,edadNombre3))
             break;
+        case 11:
+            let añoTrabajo = parseInt(prompt("Ingrese los Años de Trabajo"));
+            alert(ej11_calcularBono(añoTrabajo))
+            break;
+        case 12:
+            let salarioMensual = parseFloat(prompt("Ingrese su Salario Inicial"));
+            let añodeTrabajo = parseInt(prompt("Ingrese los Años de Trabajo"));
+            alert(ej12_calcularIncrementosalarial(salarioMensual,añodeTrabajo))
+            break;
+        
+        
         
             
         
@@ -173,3 +184,42 @@ function ej10_personaMenor(nombre1,nombre2,nombre3,edadNombre1,edadNombre2,edadN
         }
     }
 
+function ej11_calcularBono(añoTrabajo){
+    if (isNaN(añoTrabajo)) {
+        return "por favor ingrese los años de trabajo"
+    } else {
+        switch (añoTrabajo) {
+            case 1:
+                return "Su Bono es de $100"
+                break;
+            case 2:
+                return "Su Bono es de $200"
+                break;
+            case 3:
+                return "Su Bono es de $300"
+                break;
+            case 4:
+                return "Su Bono es de $400"
+                break;
+            case 5:
+                return "Su Bono es de $500"
+                break;
+            case 0:
+                return "No merece Bono :( pal otro año sera pipipipipi"
+                break;
+            
+            default:
+                return "Su Bono es de $1000"
+                break;
+        }
+    }
+}
+
+function ej12_calcularIncrementosalarial(salarioMensual,añodeTrabajo){
+    if (isNaN(salarioMensual) || isNaN(añodeTrabajo)){
+        return "Porfavor, ingrese datos"
+    } else {
+        return " el salario es: " + (salarioMensual*Math.pow(1.10,añodeTrabajo)).toFixed(2)
+    }
+
+}

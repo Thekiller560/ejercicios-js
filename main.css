@@ -5,6 +5,7 @@ body {
 
 h1 {
     text-align: center;
+    font-size: 40x;
 }
 button{
     color: black;
@@ -18,7 +19,8 @@ button{
 }
 
 button:hover {
-    background-color: aqua;
+    background-color: black;
+    color: white;
 }
 
 .button_container {
@@ -28,3 +30,17 @@ button:hover {
     align-items: center;
 }
 
+.img_container {
+    width: 20%;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.img_meme {
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 15%;
+}
