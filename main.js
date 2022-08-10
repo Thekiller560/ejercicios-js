@@ -1,7 +1,7 @@
 
 function CallMenu(){
     let nro_ejercicio = parseInt(
-        prompt("Ingrese el numero de ejercicio que desea ejecutar: \r\n 1.suma \r\n 2.Promedio de Examenes \r\n 3.Calcular el area del rectangulo \r\n 4.Calcular el area del triangulo \r\n 5.Calcular el area del circulo \r\n 6.Calcular salario semanal \r\n 7.convertir pulgadas \r\n 8.Cambiar a dolares")
+        prompt("Ingrese el numero de ejercicio que desea ejecutar: \r\n 1.suma \r\n 2.Promedio de Examenes \r\n 3.Calcular el area del rectangulo \r\n 4.Calcular el area del triangulo \r\n 5.Calcular el area del circulo \r\n 6.Calcular salario semanal \r\n 7.convertir pulgadas \r\n 8.Cambiar a dolares \r\n 9.Calcular Edad \r\n 10.Calcular persona de menor edad")
     )
 
     if (isNaN(nro_ejercicio)) {
@@ -56,7 +56,23 @@ function MenuEjercicio(nro_ejercicio){
         case 8:
             let monedaPeruana = parseFloat(prompt("Ingrese la cantidad de dinero a cambiar"));
             alert(ej8_convertirMoneda(monedaPeruana))
-            break;    
+            break;
+        case 9:
+            let añoNacimiento = parseInt(prompt("Ingrese el Año en que nacio"));
+            alert(ej9_calcularEdad(añoNacimiento))
+            break;
+        case 10:
+            let nombre1 = prompt("Ingrese nombre 1");
+            let edadNombre1 = parseInt(prompt("Ingrese edad 1"));
+            let nombre2 = prompt("Ingrese nombre 2");
+            let edadNombre2 = parseInt(prompt("Ingrese edad 2"));
+            let nombre3 = prompt("Ingrese nombre 3");
+            let edadNombre3 = parseInt(prompt("Ingrese edad 3"));
+            alert(ej10_personaMenor(nombre1,nombre2,nombre3,edadNombre1,edadNombre2,edadNombre3))
+            break;
+        
+            
+        
         default:
             break;
     }
@@ -129,3 +145,31 @@ function ej8_convertirMoneda(monedaPeruana){
         return "el cambio es: " + (monedaPeruana/3.90)
     }
 }
+
+function ej9_calcularEdad(añoNacimiento){
+    if (isNaN(añoNacimiento)) {
+        return "por favor ingrese el año de Nacimiento"
+    } else {
+        return "Su edad es : " + (2022-añoNacimiento)
+    }
+}
+
+function ej10_personaMenor(nombre1,nombre2,nombre3,edadNombre1,edadNombre2,edadNombre3){
+
+        if (edadNombre1<edadNombre2) {
+            if (edadNombre1<edadNombre3) {
+                return `la persona menor es : ${nombre1} con la menor edad ${edadNombre1}`;                
+            } else {
+                return `la persona menor es : ${nombre3} con la menor edad ${edadNombre3}`;
+            }
+            
+        } else {
+            if (edadNombre2<edadNombre3) {
+                return `la persona menor es : ${nombre2} con la menor edad ${edadNombre2}`;                
+            } else {
+                return `la persona menor es : ${nombre3} con la menor edad ${edadNombre3}`;
+            }
+            
+        }
+    }
+
