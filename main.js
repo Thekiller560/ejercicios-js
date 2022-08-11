@@ -87,7 +87,12 @@ function MenuEjercicio(nro_ejercicio){
             alert(ej13_Determinaraprobados(cantAlumnos,nota,aprobados,desaprobados))
             break;
         case 14:
-            let focosColores = ["verde","blanco","rojo","verde","blanco","blanco","rojo","rojo","verde","verde","verde","blanco","rojo"];
+
+            let focosColores = [];
+            let cantFocos = parseInt(prompt("Ingrese la cantidad a producir"));
+            for (let produccionFocos = 0; produccionFocos < cantFocos; produccionFocos++) {
+                focosColores[focosColores.length] = prompt("Ingrese el color a producir: puede ser rojo,verde o blanco");             
+            }
             let focosRojos = focosColores.filter(color => color == "rojo").length;
             let focosVerde = focosColores.filter(color => color == "verde").length;
             let focosBlanco = focosColores.filter(color => color == "blanco").length;
