@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     margin: 0 auto;
     font-family: 'Heebo', sans-serif;
@@ -40,3 +41,57 @@ body {
     box-shadow: 0 0 10px #336BFF, 0 0 40px #336BFF, 0 0 80px #336BFF;
     transition-delay: 0.4s;
 }
+=======
+body {  
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:black;
+    font-family: 'Silkscreen', cursive;
+}
+
+
+.hero {
+    top: 20rem;
+    display: flex;
+    font-size: 1.5rem;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: #0419B4;
+    z-index: 99;
+}
+
+button{
+    color: white;
+    background-color: rgba(14, 51, 119, 0.288);
+    border-radius: 0.5rem;
+    height: 80px;
+    width: 150px;
+    transition: 1s;
+    font-size: 1rem;
+}
+.button_container {
+    position: relative;
+    display: inline-block;
+    font-size: 24px;
+    transition: 0.4s;
+}
+
+.button_container:hover{
+
+    box-shadow: 0 0 20px #0419B4, 0 0 40px #0419B4, 0 0 70px #0419B4;
+    
+    transition-delay: 0.8s;
+}
+
+#particles-js {
+    height: 170vh;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+>>>>>>> 17a43b6c54c07bf3d2ab20299401159be9f9a5a7

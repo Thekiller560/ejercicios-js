@@ -1,7 +1,7 @@
 
 function CallMenu(){
     let nro_ejercicio = parseInt(
-        prompt("Ingrese el numero de ejercicio que desea ejecutar: \r\n 1.suma \r\n 2.Promedio de Examenes \r\n 3.Calcular el area del rectangulo \r\n 4.Calcular el area del triangulo \r\n 5.Calcular el area del circulo \r\n 6.Calcular salario semanal \r\n 7.convertir pulgadas \r\n 8.Cambiar a dolares \r\n 9.Calcular Edad \r\n 10.Calcular persona de menor edad \r\n 11.Calcular Bono \r\n 12.Calcular Incremento de Salario Anual")
+        prompt("Ingrese el numero de ejercicio que desea ejecutar: \r\n 1.suma \r\n 2.Promedio de Examenes \r\n 3.Calcular el area del rectangulo \r\n 4.Calcular el area del triangulo \r\n 5.Calcular el area del circulo \r\n 6.Calcular salario semanal \r\n 7.convertir pulgadas \r\n 8.Cambiar a dolares \r\n 9.Calcular Edad \r\n 10.Calcular persona de menor edad \r\n 11.Calcular Bono \r\n 12.Calcular Incremento de Salario Anual \r\n 13.Calcular Aprobados y Desaprobados \r\n 14.Calcular cant de focos segun color \r\n 15.Calcular si vota o no vota")
     )
 
     if (isNaN(nro_ejercicio)) {
@@ -79,12 +79,28 @@ function MenuEjercicio(nro_ejercicio){
             let añodeTrabajo = parseInt(prompt("Ingrese los Años de Trabajo"));
             alert(ej12_calcularIncrementosalarial(salarioMensual,añodeTrabajo))
             break;
-        
-        
-        
-            
-        
+        case 13:
+            let cantAlumnos = parseInt(prompt("Ingrese la cantidad de Alumnos a ingresar sus notas"));
+            let nota = 0;
+            let aprobados = 0;
+            let desaprobados = 0;
+            alert(ej13_Determinaraprobados(cantAlumnos,nota,aprobados,desaprobados))
+            break;
+        case 14:
+            let focosColores = ["verde","blanco","rojo","verde","blanco","blanco","rojo","rojo","verde","verde","verde","blanco","rojo"];
+            let focosRojos = focosColores.filter(color => color == "rojo").length;
+            let focosVerde = focosColores.filter(color => color == "verde").length;
+            let focosBlanco = focosColores.filter(color => color == "blanco").length;
+            alert(ej14_contarFocos(focosRojos,focosVerde,focosBlanco))
+            break;
+
+        case 15:
+            let edadd=parseInt(prompt("\r\nIngrese su edad: "));
+            alert(ej15_votar(edadd));
+            break;
+       
         default:
+            alert("Porfavor Ingrese valores menores o igual que 15")
             break;
     }
 
@@ -222,4 +238,39 @@ function ej12_calcularIncrementosalarial(salarioMensual,añodeTrabajo){
         return " el salario es: " + (salarioMensual*Math.pow(1.10,añodeTrabajo)).toFixed(2)
     }
 
+}
+
+function ej13_Determinaraprobados(cantAlumnos,aprobados,desaprobados,nota){
+
+    for (let notaIngreso = 1; notaIngreso <= cantAlumnos; notaIngreso++) {
+        nota = parseFloat(prompt("Ingrese la nota"));
+            if (nota>=10.5) {
+                aprobados=aprobados+1
+                
+            } else {
+                desaprobados=desaprobados+1
+                
+            }
+        
+    }
+return `Hay ${aprobados} aprobados y un total de ${desaprobados} desaprobados`; 
+
+}
+
+function ej14_contarFocos(focosRojos,focosVerde,focosBlanco){
+    return `Hay ${focosRojos} Rojo, un total de ${focosVerde} Verde y un total de ${focosBlanco} Blanco`;
+
+}
+
+
+
+
+
+function ej15_votar(edad){
+    if(edad>=18){
+        return "Ud puede votar en las elecciones";
+    }
+    else{
+        return "Ud. no puede votar en las elecciones";
+    }
 }
